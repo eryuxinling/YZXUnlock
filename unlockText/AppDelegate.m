@@ -52,7 +52,7 @@
 
 - (void)p_loginSuccess
 {
-    [self p_windowRootControllerWithHome];
+    [self p_windowRootControllerWithUnlock];
 }
 
 - (void)p_touchIDSuccess
