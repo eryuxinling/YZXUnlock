@@ -14,5 +14,5 @@
 
 3-3.点击“指纹解锁”：第一次会提醒你是否开启指纹解锁，如果点“NO”，进入home页面，下次进入会继续提醒，如果点击“YES”，进入home页面，下次重新进入应用直接验证指纹。
 
-![image](http://oih3a9o4n.bkt.clouddn.com/unlock11.jpeg)       ![image](http://oih3a9o4n.bkt.clouddn.com/unlock22.jpeg)
+![image](http://oih3a9o4n.bkt.clouddn.com/unlock22.jpeg)       ![image](http://oih3a9o4n.bkt.clouddn.com/unlock11.jpeg)
 ![image](http://oih3a9o4n.bkt.clouddn.com/unlock33.jpeg)       ![image](http://oih3a9o4n.bkt.clouddn.com/unlock44.jpeg)
