@@ -24,7 +24,7 @@
 
 @property (nonatomic, strong) CAShapeLayer               *lineLayer;
 @property (nonatomic, strong) NSMutableArray             *selectedViewCenter;
-
+@property (nonatomic, strong) UIBezierPath               *linePath;
 @property (nonatomic, assign) BOOL                       touchEnd;
 
 @end
@@ -160,18 +160,17 @@
     if (self.touchEnd) {
         return;
     }
-    
+    //移除path的点和lineLayer
     [self.lineLayer removeFromSuperlayer];
-    
+    [self.linePath removeAllPoints];
     //画线
-    UIBezierPath *linePath = [UIBezierPath bezierPath];
-    [linePath moveToPoint:self.startPoint];
+    [self.linePath moveToPoint:self.startPoint];
     for (NSValue *pointValue in self.selectedViewCenter) {
-        [linePath addLineToPoint:[pointValue CGPointValue]];
+        [self.linePath addLineToPoint:[pointValue CGPointValue]];
     }
-    [linePath addLineToPoint:self.endPoint];
+    [self.linePath addLineToPoint:self.endPoint];
     
-    self.lineLayer.path = linePath.CGPath;
+    self.lineLayer.path = self.linePath.CGPath;
     self.lineLayer.lineWidth = 4.0;
     self.lineLayer.strokeColor = RGBCOLOR(30.0, 180.0, 244.0).CGColor;
     self.lineLayer.fillColor = [UIColor clearColor].CGColor;
@@ -218,6 +217,14 @@
         _lineLayer = [CAShapeLayer layer];
     }
     return _lineLayer;
+}
+
+- (UIBezierPath *)linePath
+{
+    if (!_linePath) {
+        _linePath = [UIBezierPath bezierPath];
+    }
+    return _linePath;
 }
 
 @end

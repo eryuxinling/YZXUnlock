@@ -35,12 +35,21 @@
                         <action selector="touchIDUnlock:" destination="-1" eventType="touchUpInside" id="OZR-R7-HLM"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kl7-yo-xiI">
+                    <rect key="frame" x="141" y="537" width="92" height="30"/>
+                    <state key="normal" title="忘记手势密码"/>
+                    <connections>
+                        <action selector="forgetGesturesPasswordPressed:" destination="-1" eventType="touchUpInside" id="Vgv-rS-e7h"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="IcG-vI-D5e" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="C0K-fr-3hs"/>
                 <constraint firstItem="yP9-AG-CId" firstAttribute="width" secondItem="IcG-vI-D5e" secondAttribute="width" id="URx-sg-mJU"/>
                 <constraint firstItem="IcG-vI-D5e" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Zto-nB-3Jh"/>
+                <constraint firstItem="Kl7-yo-xiI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dWz-zZ-OWw"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Kl7-yo-xiI" secondAttribute="bottom" constant="100" id="ivA-wu-4Mq"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="yP9-AG-CId" secondAttribute="trailing" id="lLi-BL-M6O"/>
                 <constraint firstItem="yP9-AG-CId" firstAttribute="centerY" secondItem="IcG-vI-D5e" secondAttribute="centerY" id="who-es-Ngc"/>
                 <constraint firstItem="IcG-vI-D5e" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/2" id="xvq-aV-5hv"/>

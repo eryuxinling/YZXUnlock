@@ -16,5 +16,7 @@
 
 4.首页可重置手势密码，点击“重置手势密码”，跳转“手势设置页面”，重新设置手势密码，设置成功，进入“选择解锁方式”页面，可验证是否成功。
 
+5.忘记手势密码：点击“忘记手势密码”，跳转“手势设置页面”，重新设置手势密码，设置成功，进入“选择解锁方式”页面，可验证是否成功。
+
 ![image](http://oih3a9o4n.bkt.clouddn.com/unlock22.jpeg)       ![image](http://oih3a9o4n.bkt.clouddn.com/unlock11.jpeg)
 ![image](http://oih3a9o4n.bkt.clouddn.com/unlock44.jpeg)       ![image](http://oih3a9o4n.bkt.clouddn.com/unlock33.jpeg)

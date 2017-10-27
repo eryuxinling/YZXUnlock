@@ -49,4 +49,10 @@
     [self presentViewController:touchIDVC animated:NO completion:nil];
 }
 
+- (IBAction)forgetGesturesPasswordPressed:(UIButton *)sender {
+    GesturesViewController *gesturesVC = [[GesturesViewController alloc] init];
+    gesturesVC.settingGesture = YES;
+    [self presentViewController:gesturesVC animated:YES completion:nil];
+}
+
 @end
