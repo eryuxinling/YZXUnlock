@@ -161,6 +161,8 @@
         return;
     }
     
+    [self.lineLayer removeFromSuperlayer];
+    
     //画线
     UIBezierPath *linePath = [UIBezierPath bezierPath];
     [linePath moveToPoint:self.startPoint];
