@@ -105,7 +105,7 @@
     //设置手势时，返回设置的时候密码，否则继续下面的操作进行手势解锁
     if (_gestureBlock && _settingGesture) {
         //手势密码不得小于4个点
-        if (self.selectedView.count < 4) {
+        if (self.selectedView.count < 4 && self.selectedView.count > 0) {
             self.touchEnd = NO;
             for (PointView *pointView in self.pointViews) {
                 pointView.isSelected = NO;
@@ -118,6 +118,9 @@
             if (_settingBlock) {
                 self.settingBlock();
             }
+            return;
+        }else if (self.selectedView.count == 0) {
+            self.touchEnd = NO;
             return;
         }
         _gestureBlock(self.selectedView);
