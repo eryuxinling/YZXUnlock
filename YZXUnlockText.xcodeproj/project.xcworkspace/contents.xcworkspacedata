@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:unlockText.xcodeproj">
+      location = "self:/Users/00324572/Desktop/MyGitHub/YZXUnlock/YZXUnlockText.xcodeproj">
    </FileRef>
 </Workspace>

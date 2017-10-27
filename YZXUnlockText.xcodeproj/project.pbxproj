@@ -46,17 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		112814B41FA1783000B1AE0E /* unlockText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unlockText.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		112814B41FA1783000B1AE0E /* YZXUnlockText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YZXUnlockText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		112814B71FA1783000B1AE0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		112814B81FA1783000B1AE0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		112814C01FA1783000B1AE0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		112814C31FA1783000B1AE0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		112814C51FA1783000B1AE0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		112814C61FA1783000B1AE0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		112814CC1FA1783000B1AE0E /* unlockTextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unlockTextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		112814CC1FA1783000B1AE0E /* YZXUnlockTextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YZXUnlockTextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		112814D01FA1783000B1AE0E /* unlockTextTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = unlockTextTests.m; sourceTree = "<group>"; };
 		112814D21FA1783000B1AE0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		112814D71FA1783000B1AE0E /* unlockTextUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unlockTextUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		112814D71FA1783000B1AE0E /* YZXUnlockTextUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YZXUnlockTextUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		112814DB1FA1783000B1AE0E /* unlockTextUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = unlockTextUITests.m; sourceTree = "<group>"; };
 		112814DD1FA1783000B1AE0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		112814EB1FA1793A00B1AE0E /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -121,9 +121,9 @@
 		112814B51FA1783000B1AE0E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				112814B41FA1783000B1AE0E /* unlockText.app */,
-				112814CC1FA1783000B1AE0E /* unlockTextTests.xctest */,
-				112814D71FA1783000B1AE0E /* unlockTextUITests.xctest */,
+				112814B41FA1783000B1AE0E /* YZXUnlockText.app */,
+				112814CC1FA1783000B1AE0E /* YZXUnlockTextTests.xctest */,
+				112814D71FA1783000B1AE0E /* YZXUnlockTextUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,9 +205,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		112814B31FA1783000B1AE0E /* unlockText */ = {
+		112814B31FA1783000B1AE0E /* YZXUnlockText */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 112814E01FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "unlockText" */;
+			buildConfigurationList = 112814E01FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "YZXUnlockText" */;
 			buildPhases = (
 				112814B01FA1783000B1AE0E /* Sources */,
 				112814B11FA1783000B1AE0E /* Frameworks */,
@@ -217,14 +217,14 @@
 			);
 			dependencies = (
 			);
-			name = unlockText;
+			name = YZXUnlockText;
 			productName = unlockText;
-			productReference = 112814B41FA1783000B1AE0E /* unlockText.app */;
+			productReference = 112814B41FA1783000B1AE0E /* YZXUnlockText.app */;
 			productType = "com.apple.product-type.application";
 		};
-		112814CB1FA1783000B1AE0E /* unlockTextTests */ = {
+		112814CB1FA1783000B1AE0E /* YZXUnlockTextTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 112814E31FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "unlockTextTests" */;
+			buildConfigurationList = 112814E31FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "YZXUnlockTextTests" */;
 			buildPhases = (
 				112814C81FA1783000B1AE0E /* Sources */,
 				112814C91FA1783000B1AE0E /* Frameworks */,
@@ -235,14 +235,14 @@
 			dependencies = (
 				112814CE1FA1783000B1AE0E /* PBXTargetDependency */,
 			);
-			name = unlockTextTests;
+			name = YZXUnlockTextTests;
 			productName = unlockTextTests;
-			productReference = 112814CC1FA1783000B1AE0E /* unlockTextTests.xctest */;
+			productReference = 112814CC1FA1783000B1AE0E /* YZXUnlockTextTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		112814D61FA1783000B1AE0E /* unlockTextUITests */ = {
+		112814D61FA1783000B1AE0E /* YZXUnlockTextUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 112814E61FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "unlockTextUITests" */;
+			buildConfigurationList = 112814E61FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "YZXUnlockTextUITests" */;
 			buildPhases = (
 				112814D31FA1783000B1AE0E /* Sources */,
 				112814D41FA1783000B1AE0E /* Frameworks */,
@@ -253,9 +253,9 @@
 			dependencies = (
 				112814D91FA1783000B1AE0E /* PBXTargetDependency */,
 			);
-			name = unlockTextUITests;
+			name = YZXUnlockTextUITests;
 			productName = unlockTextUITests;
-			productReference = 112814D71FA1783000B1AE0E /* unlockTextUITests.xctest */;
+			productReference = 112814D71FA1783000B1AE0E /* YZXUnlockTextUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -283,7 +283,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 112814AF1FA1783000B1AE0E /* Build configuration list for PBXProject "unlockText" */;
+			buildConfigurationList = 112814AF1FA1783000B1AE0E /* Build configuration list for PBXProject "YZXUnlockText" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -296,9 +296,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				112814B31FA1783000B1AE0E /* unlockText */,
-				112814CB1FA1783000B1AE0E /* unlockTextTests */,
-				112814D61FA1783000B1AE0E /* unlockTextUITests */,
+				112814B31FA1783000B1AE0E /* YZXUnlockText */,
+				112814CB1FA1783000B1AE0E /* YZXUnlockTextTests */,
+				112814D61FA1783000B1AE0E /* YZXUnlockTextUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -372,12 +372,12 @@
 /* Begin PBXTargetDependency section */
 		112814CE1FA1783000B1AE0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 112814B31FA1783000B1AE0E /* unlockText */;
+			target = 112814B31FA1783000B1AE0E /* YZXUnlockText */;
 			targetProxy = 112814CD1FA1783000B1AE0E /* PBXContainerItemProxy */;
 		};
 		112814D91FA1783000B1AE0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 112814B31FA1783000B1AE0E /* unlockText */;
+			target = 112814B31FA1783000B1AE0E /* YZXUnlockText */;
 			targetProxy = 112814D81FA1783000B1AE0E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -536,7 +536,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = yx.unlockTextTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/unlockText.app/unlockText";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YZXUnlockText.app/YZXUnlockText";
 			};
 			name = Debug;
 		};
@@ -550,7 +550,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = yx.unlockTextTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/unlockText.app/unlockText";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YZXUnlockText.app/YZXUnlockText";
 			};
 			name = Release;
 		};
@@ -583,7 +583,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		112814AF1FA1783000B1AE0E /* Build configuration list for PBXProject "unlockText" */ = {
+		112814AF1FA1783000B1AE0E /* Build configuration list for PBXProject "YZXUnlockText" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				112814DE1FA1783000B1AE0E /* Debug */,
@@ -592,7 +592,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		112814E01FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "unlockText" */ = {
+		112814E01FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "YZXUnlockText" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				112814E11FA1783000B1AE0E /* Debug */,
@@ -601,7 +601,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		112814E31FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "unlockTextTests" */ = {
+		112814E31FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "YZXUnlockTextTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				112814E41FA1783000B1AE0E /* Debug */,
@@ -610,7 +610,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		112814E61FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "unlockTextUITests" */ = {
+		112814E61FA1783000B1AE0E /* Build configuration list for PBXNativeTarget "YZXUnlockTextUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				112814E71FA1783000B1AE0E /* Debug */,
