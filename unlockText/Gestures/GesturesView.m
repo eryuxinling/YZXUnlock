@@ -137,7 +137,7 @@
             self.unlockBlock(YES);
         }
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"touchIDLoginSuccess" object:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UnlockLoginSuccess" object:nil];
         });
     }else if (selectedID || selectedID.count > 0) {//解锁失败
         //解锁失败，遍历pointView，设置为失败状态

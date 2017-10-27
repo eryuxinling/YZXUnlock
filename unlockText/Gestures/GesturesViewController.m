@@ -48,7 +48,7 @@
 - (IBAction)buttonPressed:(UIButton *)sender {
     if (sender == self.confirmBut) {//设置手势，确定是保存手势密码到本地，并显示首页
         [[NSUserDefaults standardUserDefaults] setObject:self.selectedID forKey:@"GestureUnlock"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"touchIDLoginSuccess" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
     }else {//设置手势，取消返回上一页
         [self dismissViewControllerAnimated:YES completion:nil];
     }

@@ -37,7 +37,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(p_touchIDSuccess) name:@"OpenTouchIDSuccess" object:nil];
     
     //已登录，通过TouchID认证
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(p_touchIDLoginSuccess) name:@"touchIDLoginSuccess" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(p_touchIDLoginSuccess) name:@"UnlockLoginSuccess" object:nil];
     
     //已登录，未通过TouchID认证
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(p_touchIDFailed) name:@"touchIDFailed" object:nil];

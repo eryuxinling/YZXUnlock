@@ -45,7 +45,7 @@
         if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
             [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"TouchID Text" reply:^(BOOL success, NSError * _Nullable error) {
                 if (success) {//指纹验证成功
-                    [[NSNotificationCenter defaultCenter] postNotificationName:@"touchIDLoginSuccess" object:nil];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"UnlockLoginSuccess" object:nil];
                 }else {//指纹验证失败
                     switch (error.code)
                     {

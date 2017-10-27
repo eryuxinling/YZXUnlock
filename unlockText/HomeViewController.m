@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "GesturesViewController.h"
 
 @interface HomeViewController ()
 
@@ -18,5 +19,12 @@
     [super viewDidLoad];
     self.title = @"HOME";
 }
+
+- (IBAction)buttonPressed:(UIButton *)sender {
+    GesturesViewController *gesturesVC = [[GesturesViewController alloc] init];
+    gesturesVC.settingGesture = YES;
+    [self presentViewController:gesturesVC animated:YES completion:nil];
+}
+
 
 @end
