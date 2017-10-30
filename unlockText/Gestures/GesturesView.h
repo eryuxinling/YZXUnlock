@@ -13,14 +13,28 @@ typedef void (^GestureBlock)(NSArray *selectedID);
 //判断是否解锁成功
 typedef void (^UnlockBlock)(BOOL isSuccess);
 //设置手势失败
-typedef void (^SettingBlock)();
+typedef void (^SettingBlock)(void);
 
 @interface GesturesView : UIView
 
+/**
+ 设置密码时，返回设置的手势密码
+ */
 @property (nonatomic, copy) GestureBlock             gestureBlock;
+                             
+/**
+ 返回解锁成功还是失败状态
+ */
 @property (nonatomic, copy) UnlockBlock            unlockBlock;
+                             
+/**
+ 判断手势密码时候设置成功（手势密码不得少于四个点）
+ */
 @property (nonatomic, copy) SettingBlock           settingBlock;
 
+/**
+ 判断是设置手势还是手势解锁
+ */
 @property (nonatomic, assign) BOOL         settingGesture;
 
 @end

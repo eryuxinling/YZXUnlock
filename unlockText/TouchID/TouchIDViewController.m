@@ -122,7 +122,7 @@
             }];
         }else {
             //不支持
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"未授权TouchID" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"该设备不支持TouchID" preferredStyle:UIAlertControllerStyleAlert];
             [alertController addAction:[UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleCancel handler:nil]];
             [self presentViewController:alertController animated:YES completion:nil];
         }
