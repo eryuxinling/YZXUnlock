@@ -15,16 +15,21 @@
 
 @interface GesturesView ()
 
+//可变数组，用于存放初始化的点击按钮
 @property (nonatomic, strong) NSMutableArray             *pointViews;
-
+//记录手势滑动的起始点
 @property (nonatomic, assign) CGPoint                    startPoint;
+//记录手势滑动的结束点
 @property (nonatomic, assign) CGPoint                    endPoint;
-
+//存储选中的按钮ID
 @property (nonatomic, strong) NSMutableArray             *selectedView;
-
+//手势滑动经过的点的连线
 @property (nonatomic, strong) CAShapeLayer               *lineLayer;
-@property (nonatomic, strong) NSMutableArray             *selectedViewCenter;
+//手势滑动的path
 @property (nonatomic, strong) UIBezierPath               *linePath;
+//用于存储选中的按钮
+@property (nonatomic, strong) NSMutableArray             *selectedViewCenter;
+//判断时候滑动是否结束
 @property (nonatomic, assign) BOOL                       touchEnd;
 
 @end
@@ -77,7 +82,7 @@
             if (CGPointEqualToPoint(self.startPoint, CGPointZero)) {
                 self.startPoint = pointView.center;
             }
-            //判断该手势按钮的中心点是否记录，为记录则记录
+            //判断该手势按钮的中心点是否记录，未记录则记录
             if (![self.selectedViewCenter containsObject:[NSValue valueWithCGPoint:pointView.center]]) {
                 [self.selectedViewCenter addObject:[NSValue valueWithCGPoint:pointView.center]];
             }
@@ -99,13 +104,17 @@
 {
     //结束手势滑动的时候，将结束按钮设置为最后一个手势按钮的中心点，并画线
     self.endPoint = [self.selectedViewCenter.lastObject CGPointValue];
+    //如果endPoint还是为zero说明未滑动到有效位置，不做处理
+    if (CGPointEqualToPoint(self.endPoint, CGPointZero)) {
+        return;
+    }
     [self p_drawLines];
     //改变手势滑动结束的状态，为yes则无法在滑动手势划线
     self.touchEnd = YES;
     //设置手势时，返回设置的时候密码，否则继续下面的操作进行手势解锁
     if (_gestureBlock && _settingGesture) {
         //手势密码不得小于4个点
-        if (self.selectedView.count < 4 && self.selectedView.count > 0) {
+        if (self.selectedView.count < 4) {
             self.touchEnd = NO;
             for (PointView *pointView in self.pointViews) {
                 pointView.isSelected = NO;
@@ -118,9 +127,6 @@
             if (_settingBlock) {
                 self.settingBlock();
             }
-            return;
-        }else if (self.selectedView.count == 0) {
-            self.touchEnd = NO;
             return;
         }
         _gestureBlock(self.selectedView);
@@ -142,7 +148,7 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [[NSNotificationCenter defaultCenter] postNotificationName:@"UnlockLoginSuccess" object:nil];
         });
-    }else if (selectedID || selectedID.count > 0) {//解锁失败
+    }else {//解锁失败
         //解锁失败，遍历pointView，设置为失败状态
         for (PointView *pointView in self.pointViews) {
             pointView.isError = YES;
@@ -195,6 +201,14 @@
     return _pointViews;
 }
 
+- (UIBezierPath *)linePath
+{
+    if (!_linePath) {
+        _linePath = [UIBezierPath bezierPath];
+    }
+    return _linePath;
+}
+
 - (NSMutableArray *)selectedView
 {
     if (!_selectedView) {
@@ -217,14 +231,6 @@
         _lineLayer = [CAShapeLayer layer];
     }
     return _lineLayer;
-}
-
-- (UIBezierPath *)linePath
-{
-    if (!_linePath) {
-        _linePath = [UIBezierPath bezierPath];
-    }
-    return _linePath;
 }
 
 @end

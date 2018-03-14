@@ -10,7 +10,7 @@
 
 //回传选择的id
 typedef void (^GestureBlock)(NSArray *selectedID);
-//判断是否解锁成功
+//回传手势验证结果
 typedef void (^UnlockBlock)(BOOL isSuccess);
 //设置手势失败
 typedef void (^SettingBlock)(void);

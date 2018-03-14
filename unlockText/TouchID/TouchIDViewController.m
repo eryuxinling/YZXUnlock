@@ -41,7 +41,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         LAContext *context = [[LAContext alloc] init];
         NSError *error = nil;
-        //判断时候支持TouchID
+        //判断是否支持TouchID
         if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
             [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:@"TouchID Text" reply:^(BOOL success, NSError * _Nullable error) {
                 if (success) {//指纹验证成功
@@ -131,7 +131,7 @@
 
 - (void)p_openTouchID
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
+//    dispatch_async(dispatch_get_main_queue(), ^{
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"是否开启TouchID?" preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //开启TouchID
@@ -144,7 +144,7 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"OpenTouchIDSuccess" object:nil userInfo:nil];
         }]];
         [self presentViewController:alertController animated:YES completion:nil];
-    });
+//    });
 }
 
 
