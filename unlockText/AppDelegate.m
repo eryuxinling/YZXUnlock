@@ -32,7 +32,7 @@
     
     //登录成功
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(p_loginSuccess) name:@"loginSuccess" object:nil];
-//
+    //
     //已登录，是否开启TouchID认证
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(p_touchIDSuccess) name:@"OpenTouchIDSuccess" object:nil];
     
@@ -68,42 +68,34 @@
 //homeVC为rootController
 - (void)p_windowRootControllerWithHome
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        HomeViewController *homeVC = [[HomeViewController alloc] init];
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeVC];
-        self.window.rootViewController = navigationController;
-        [self.window makeKeyAndVisible];
-    });
+    HomeViewController *homeVC = [[HomeViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:homeVC];
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
 }
 
 //loginVC为rootController
 - (void)p_windowRootControllerWithLogin
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        LoginViewController *loginVC = [[LoginViewController alloc] init];
-        self.window.rootViewController = loginVC;
-        [self.window makeKeyAndVisible];
-    });
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    self.window.rootViewController = loginVC;
+    [self.window makeKeyAndVisible];
 }
 
 //touchIDVC为rootController
 - (void)p_windowRootControllerWithTouchID
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        TouchIDViewController *touchIDVC = [[TouchIDViewController alloc] init];
-        self.window.rootViewController = touchIDVC;
-        [self.window makeKeyAndVisible];
-    });
+    TouchIDViewController *touchIDVC = [[TouchIDViewController alloc] init];
+    self.window.rootViewController = touchIDVC;
+    [self.window makeKeyAndVisible];
 }
 
 //unlockVC为rootController
 - (void)p_windowRootControllerWithUnlock
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UnlockViewController *unlockVC = [[UnlockViewController alloc] init];
-        self.window.rootViewController = unlockVC;
-        [self.window makeKeyAndVisible];
-    });
+    UnlockViewController *unlockVC = [[UnlockViewController alloc] init];
+    self.window.rootViewController = unlockVC;
+    [self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

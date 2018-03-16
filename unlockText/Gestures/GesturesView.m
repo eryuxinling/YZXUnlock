@@ -143,11 +143,10 @@
         }
         self.lineLayer.strokeColor = RGBCOLOR(43.0, 210.0, 110.0).CGColor;
         if (_unlockBlock) {
-            self.unlockBlock(YES);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                self.unlockBlock(YES);
+            });
         }
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"UnlockLoginSuccess" object:nil];
-        });
     }else {//解锁失败
         //解锁失败，遍历pointView，设置为失败状态
         for (PointView *pointView in self.pointViews) {
@@ -155,7 +154,9 @@
         }
         self.lineLayer.strokeColor = RGBCOLOR(222.0, 64.0, 60.0).CGColor;
         if (_unlockBlock) {
-            self.unlockBlock(NO);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                self.unlockBlock(NO);
+            });
         }
     }
 }

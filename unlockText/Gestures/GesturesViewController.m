@@ -9,8 +9,8 @@
 #import "GesturesViewController.h"
 #import "GesturesView.h"
 
-#define SELF_WIDTH self.view.bounds.size.width
-#define SELF_HEIGHT self.view.bounds.size.height
+#define SELF_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SELF_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define RGBCOLOR(x,y,z) [UIColor colorWithRed:(x) / 255.0 green:(y) / 255.0 blue:(z) / 255.0 alpha:1]
 
 @interface GesturesViewController ()
@@ -48,7 +48,10 @@
 - (IBAction)buttonPressed:(UIButton *)sender {
     if (sender == self.confirmBut) {//设置手势，确定是保存手势密码到本地，并显示首页
         [[NSUserDefaults standardUserDefaults] setObject:self.selectedID forKey:@"GestureUnlock"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
+        });
     }else {//设置手势，取消返回上一页
         [self dismissViewControllerAnimated:YES completion:nil];
     }
@@ -74,12 +77,14 @@
             if (!isSuccess) {
                 weak_self.hintLabel.text = @"解锁失败";
                 weak_self.hintLabel.textColor = [UIColor redColor];
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [weak_self dismissViewControllerAnimated:YES completion:nil];
-                });
+                [weak_self dismissViewControllerAnimated:NO completion:nil];
             }else {
                 weak_self.hintLabel.textColor = [UIColor greenColor];
                 weak_self.hintLabel.text = @"解锁成功";
+                [weak_self dismissViewControllerAnimated:NO completion:nil];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"UnlockLoginSuccess" object:nil];
+                });
             }
         };
         //设置失败
