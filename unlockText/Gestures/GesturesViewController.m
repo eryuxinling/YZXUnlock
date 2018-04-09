@@ -7,11 +7,13 @@
 //
 
 #import "GesturesViewController.h"
-#import "GesturesView.h"
+#import "YZXKeychain.h"
 
 #define SELF_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SELF_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define RGBCOLOR(x,y,z) [UIColor colorWithRed:(x) / 255.0 green:(y) / 255.0 blue:(z) / 255.0 alpha:1]
+
+
 
 @interface GesturesViewController ()
 //手势解锁页面
@@ -24,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *hintLabel;
 //设置手势成功id
 @property (nonatomic, copy) NSArray             *selectedID;
+
+@property (nonatomic, strong) YZXKeychain       *keychain;
 
 @end
 
@@ -47,7 +51,9 @@
 
 - (IBAction)buttonPressed:(UIButton *)sender {
     if (sender == self.confirmBut) {//设置手势，确定是保存手势密码到本地，并显示首页
-        [[NSUserDefaults standardUserDefaults] setObject:self.selectedID forKey:@"GestureUnlock"];
+//        [[NSUserDefaults standardUserDefaults] setObject:self.selectedID forKey:@"GestureUnlock"];
+        [self.keychain savePassword:self.selectedID service:YZX_KEYCHAIN_SERVICE account:YZX_KEYCHAIN_ACCOUNT];
+        NSLog(@"保存密码 %@",self.selectedID);
         [self dismissViewControllerAnimated:YES completion:nil];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
@@ -95,6 +101,14 @@
         };
     }
     return _gesturesView;
+}
+
+- (YZXKeychain *)keychain
+{
+    if (!_keychain) {
+        _keychain = [[YZXKeychain alloc] init];
+    }
+    return _keychain;
 }
 
 @end

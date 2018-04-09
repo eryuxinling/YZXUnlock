@@ -9,10 +9,12 @@
 #import "UnlockViewController.h"
 #import "TouchIDViewController.h"
 #import "GesturesViewController.h"
+#import "YZXKeychain.h"
 
 @interface UnlockViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *gestureButton;
+@property (nonatomic, strong) YZXKeychain       *keychain;
 
 @end
 
@@ -20,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray *gestureUnlock = [[NSUserDefaults standardUserDefaults] objectForKey:@"GestureUnlock"];
+//    NSArray *gestureUnlock = [[NSUserDefaults standardUserDefaults] objectForKey:@"GestureUnlock"];
+    NSArray *gestureUnlock = (NSArray *)[self.keychain readPasswordForService:YZX_KEYCHAIN_SERVICE account:YZX_KEYCHAIN_ACCOUNT];
     //为保存手势解锁密码，进入设置手势页面
     if (!gestureUnlock || gestureUnlock.count == 0) {
         [self.gestureButton setTitle:@"设置手势" forState:UIControlStateNormal];
@@ -54,5 +57,16 @@
     gesturesVC.settingGesture = YES;
     [self presentViewController:gesturesVC animated:YES completion:nil];
 }
+
+#pragma mark - 懒加载
+- (YZXKeychain *)keychain
+{
+    if (!_keychain) {
+        _keychain = [[YZXKeychain alloc] init];
+    }
+    return _keychain;
+}
+
+#pragma mark - ------------------------------------------------------------------------------------
 
 @end

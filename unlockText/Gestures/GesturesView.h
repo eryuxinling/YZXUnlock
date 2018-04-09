@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *const YZX_KEYCHAIN_SERVICE;
+extern NSString *const YZX_KEYCHAIN_ACCOUNT;
+
 //回传选择的id
 typedef void (^GestureBlock)(NSArray *selectedID);
 //回传手势验证结果

@@ -8,10 +8,14 @@
 
 #import "GesturesView.h"
 #import "PointView.h"
+#import "YZXKeychain.h"
 
 #define SELF_WIDTH self.bounds.size.width
 #define SELF_HEIGHT self.bounds.size.height
 #define RGBCOLOR(x,y,z) [UIColor colorWithRed:(x) / 255.0 green:(y) / 255.0 blue:(z) / 255.0 alpha:1]
+
+NSString *const YZX_KEYCHAIN_SERVICE = @"YZX_SERVICE";
+NSString *const YZX_KEYCHAIN_ACCOUNT = @"YZX_ACCOUNT";
 
 @interface GesturesView ()
 
@@ -31,6 +35,8 @@
 @property (nonatomic, strong) NSMutableArray             *selectedViewCenter;
 //判断时候滑动是否结束
 @property (nonatomic, assign) BOOL                       touchEnd;
+
+@property (nonatomic, strong) YZXKeychain       *keychain;
 
 @end
 
@@ -134,7 +140,9 @@
     }
     
     //手势解锁
-    NSArray *selectedID = [[NSUserDefaults standardUserDefaults] objectForKey:@"GestureUnlock"];
+//    NSArray *selectedID = [[NSUserDefaults standardUserDefaults] objectForKey:@"GestureUnlock"];
+        NSArray *selectedID = (NSArray *)[self.keychain readPasswordForService:YZX_KEYCHAIN_SERVICE account:YZX_KEYCHAIN_ACCOUNT];
+    NSLog(@"获取密码 %@",selectedID);
     //解锁成功
     if ([self.selectedView isEqualToArray:selectedID]) {
         //解锁成功，遍历pointview，设置为成功状态
@@ -232,6 +240,14 @@
         _lineLayer = [CAShapeLayer layer];
     }
     return _lineLayer;
+}
+
+- (YZXKeychain *)keychain
+{
+    if (!_keychain) {
+        _keychain = [[YZXKeychain alloc] init];
+    }
+    return _keychain;
 }
 
 @end
